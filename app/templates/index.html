@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Playlist Generator</h1>
+    <form method="post">
+        <label for="artist">Favorite Artist</label>
+        <input type="text" name="artist" id="artist" autocomplete="off">
+        <fieldset>
+            <legend>What is your general mood right now?</legend>
+            <input type="radio" name="mood" id="happy" value="happy">
+            <label for="happy">Happy</label>
+            <input type="radio" name="mood" id="sad" value="sad">
+            <label for="sad">Sad</label>
+            <input type="radio" name="mood" id="angry" value="angry">
+            <label for="angry">Angry</label>
+        </fieldset>
+        <fieldset>
+            <legend>How energetic are you right now?</legend>
+            <input type="radio" name="energy" id="low" value="low">
+            <label for="low">Low</label>
+            <input type="radio" name="energy" id="medium" value="medium">
+            <label for="medium">Medium</label>
+            <input type="radio" name="energy" id="high" value="high">
+            <label for="high">High</label>
+        </fieldset>
+        <fieldset>
+            <legend>Are you in the mood to dance right now?!</legend>
+            <input type="radio" name="dance" id="yes" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="dance" id="no" value="no">
+            <label for="no">No</label>
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
