@@ -11,7 +11,7 @@
     <form method="post">
         <legend>Who is your favorite artist?</legend>
         <label for="artist"></label>
-        <input class="text-box" type="text" name="artist" id="artist" autocomplete="off">
+        <input class="text-box" type="text" name="artist" id="artist" required>
         <fieldset>
             <legend>What is your general mood right now?</legend>
             <label for="happy"><input type="radio" name="mood" id="happy" value="happy">Happy</label>
@@ -31,5 +31,6 @@
         </fieldset>
         <input class="submit" type="submit" value="Submit">
     </form>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
 </body>
 </html>
