@@ -19,3 +19,17 @@ div {
     margin: 0 auto;
     width: 50%;
 }
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 30px;
+}
+
+a:visited {
+    color: #fff;
+}
+
+a:hover {
+    color: #b6eaaa;
+}
