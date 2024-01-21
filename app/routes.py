@@ -37,6 +37,9 @@ def index():
         else:
             flash('Success!')
             searchResults = sp.search(q="artist:" + artist, type="track")
+            
+            artist_id = []
+            artist_id.append(searchResults['tracks']['items'][0]['artists'][0]['id'])
 
             songs = []
             song_ids = []
@@ -86,7 +89,14 @@ def index():
             average_energy = (average_energy + energy) / 2
             average_danceability = (average_danceability + dance) / 2
 
-            playlist = sp.recommendations(seed_tracks=song_ids, target_valence=average_valence, target_energy=average_energy, target_danceability=average_danceability, limit=10)
+            track_ids = sp.recommendations(seed_artists=artist_id, target_valence=average_valence, target_energy=average_energy, target_danceability=average_danceability, limit=10)
+            playlist = []
+
+            for song in track_ids['tracks']:
+                artist = song['artists'][0]['name']
+                song = song['name']
+                string = artist + ' -- ' + song
+                playlist.append(string)
 
             query_string = '_'.join(playlist)
 
