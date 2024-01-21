@@ -4,7 +4,6 @@ const energy_radios = document.querySelectorAll('input[type="radio"][name="energ
 const dance_radios = document.querySelectorAll('input[type="radio"][name="dance"]');
 
 submit.addEventListener('click', function(event) {
-    // Prevent the form from submitting if the user hasn't selected a mood, energy, and danceability
     mood_selected = false;
     for (mood_radio of mood_radios) {
         if (mood_radio.checked) {
@@ -23,8 +22,18 @@ submit.addEventListener('click', function(event) {
             dance_selected = true;
         }
     }
-    if (!mood_selected || !energy_selected || !dance_selected) {
+    if (!mood_selected) {
         event.preventDefault();
-        alert('Please select a mood, energy, and danceability');
+        alert('Please select a mood');
+    }
+
+    if (!energy_selected) {
+        event.preventDefault();
+        alert('Please select an energy level');
+    }
+
+    if (!dance_selected) {
+        event.preventDefault();
+        alert('Please select a danceability');
     }
 });
