@@ -101,3 +101,5 @@ def index():
 @app.route('/playlist')
 def playlist():
     return render_template('playlist.html', songs=request.args.get('songs'))
+
+app.run()
