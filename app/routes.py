@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 
 app = Flask(__name__)
 
@@ -89,7 +89,7 @@ def index():
             average_energy = (average_energy + energy) / 2
             average_danceability = (average_danceability + dance) / 2
 
-            track_ids = sp.recommendations(seed_artists=artist_id, target_valence=average_valence, target_energy=average_energy, target_danceability=average_danceability, limit=10)
+            track_ids = sp.recommendations(seed_artists=artist_id, target_valence=average_valence, target_energy=average_energy, target_danceability=average_danceability, limit=20)
             playlist = []
 
             for song in track_ids['tracks']:
