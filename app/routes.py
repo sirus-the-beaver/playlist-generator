@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
+from spotipy.oauth2 import SpotifyClientCredentials
 
 app = Flask(__name__)
 
@@ -102,4 +102,4 @@ def index():
 def playlist():
     return render_template('playlist.html', songs=request.args.get('songs'))
 
-app.run(debug=True)
+app.run()
