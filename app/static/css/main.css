@@ -8,7 +8,6 @@ h1 {
     color: #fff;
     background-color: #529246;
     font-size: 40px;
-    padding: 80px 0px 0px 0px;
     text-align: center;
 }
 
@@ -22,6 +21,7 @@ form {
 
 label {
     font-weight: bold;
+    display: block;
 }
 
 input {
@@ -32,4 +32,29 @@ legend {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.text-box {
+    background-color: #979797;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.text-box:focus {
+    background-color: #b6eaaa;
+}
+
+.submit {
+    background-color: #529246;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.submit:hover {
+    background-color: #b6eaaa;
+    color: #000000;
 }
