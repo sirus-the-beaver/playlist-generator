@@ -9,34 +9,27 @@
 <body>
     <h1>Playlist Generator</h1>
     <form method="post">
-        <label for="artist">Favorite Artist</label>
-        <input type="text" name="artist" id="artist" autocomplete="off">
+        <legend>Who is your favorite artist?</legend>
+        <label for="artist"></label>
+        <input class="text-box" type="text" name="artist" id="artist" autocomplete="off">
         <fieldset>
             <legend>What is your general mood right now?</legend>
-            <input type="radio" name="mood" id="happy" value="happy">
-            <label class="block" for="happy">Happy</label>
-            <input type="radio" name="mood" id="sad" value="sad">
-            <label class="block" for="sad">Sad</label>
-            <input type="radio" name="mood" id="angry" value="angry">
-            <label class="block" for="angry">Angry</label>
+            <label for="happy"><input type="radio" name="mood" id="happy" value="happy">Happy</label>
+            <label for="sad"><input type="radio" name="mood" id="sad" value="sad">Sad</label>
+            <label for="angry"><input type="radio" name="mood" id="angry" value="angry">Angry</label>
         </fieldset>
         <fieldset>
             <legend>How energetic are you right now?</legend>
-            <input type="radio" name="energy" id="high" value="high">
-            <label class="block" for="high">High</label>
-            <input type="radio" name="energy" id="medium" value="medium">
-            <label class="block" for="medium">Medium</label>
-            <input type="radio" name="energy" id="low" value="low">
-            <label class="block" for="low">Low</label>
+            <label class="block" for="high"><input type="radio" name="energy" id="high" value="high">High</label>
+            <label class="block" for="medium"><input type="radio" name="energy" id="medium" value="medium">Medium</label>
+            <label class="block" for="low"><input type="radio" name="energy" id="low" value="low">Low</label>
         </fieldset>
         <fieldset>
             <legend>Are you in the mood to dance right now?!</legend>
-            <input type="radio" name="dance" id="yes" value="yes">
-            <label class="block" for="yes">Yes</label>
-            <input type="radio" name="dance" id="no" value="no">
-            <label class="block" for="no">No</label>
+            <label class="block" for="yes"><input type="radio" name="dance" id="yes" value="yes">Yes</label>
+            <label class="block" for="no"><input type="radio" name="dance" id="no" value="no">No</label>
         </fieldset>
-        <input type="submit" value="Submit">
+        <input class="submit" type="submit" value="Submit">
     </form>
 </body>
 </html>
