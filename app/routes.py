@@ -17,25 +17,19 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        artist = request.form['artist']
-        mood = request.form['mood']
-        energy = request.form['energy']
-        dance = request.form['dance']
+        try:
+            artist = request.form['artist']
+            mood = request.form['mood']
+            energy = request.form['energy']
+            dance = request.form['dance']
 
-        if not artist:
-            flash('Please enter an artist')
-
-        elif not mood:
-            flash('Please enter a mood')
-
-        elif not energy:
-            flash('Please enter an energy level')
-
-        elif not dance:
-            flash('Please enter a danceability level')
+        except:
+            return redirect(url_for('index'))
+        
+        if artist == '':
+            return redirect(url_for('index'))
 
         else:
-            flash('Success!')
             searchResults = sp.search(q="artist:" + artist, type="track")
             
             artist_id = []
