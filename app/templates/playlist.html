@@ -11,7 +11,8 @@
     <div>
         <p>{% for song in songs.split('_') %}</p>
         <p>{{ song }}</p>
-        <p>{% endfor %}</p>        
+        <p>{% endfor %}</p>
     </div>
+    <h2><a href="{{ url_for('index') }}">Generate another playlist</a></h2>        
 </body>
 </html>
