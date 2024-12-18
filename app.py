@@ -1,15 +1,18 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from dotenv import load_dotenv
+from os import getenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = '2759a23989cc914302c8d0911736d9d32ee1d25d8bf508d4'
+CID = getenv('CID')
+SECRET = getenv('SECRET')
+app.config['SECRET_KEY'] = getenv('SECRET_KEY')
 
-cid = 'b693038074e9496a843379e02bd8acc7'
-secret = '8f4bdc9afb324191b9eaf1b1a31f4eea'
-
-client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+client_credentials_manager = SpotifyClientCredentials(client_id=CID, client_secret=SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 
